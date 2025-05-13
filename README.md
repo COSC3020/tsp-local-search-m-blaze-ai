@@ -50,3 +50,27 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+Worst-case time:
+Number of vertices/nodes (cities) = n
+Initial tour generation (randomized) = $\Theta$(n) time
+2-OptSwap & Tour length recalculation = $\Theta$(n) time
+worst case iterations = 1000
+
+worst case time = $\Theta(1000 \times n) = \Theta(n)$
+
+worst-case space = $\Theta(n^2)$
+
+
+The worst-case time complexity is $\Theta(n^2)$, where n is the number of cities. This is because he algorithm starts with generating an initial random tour (usually done at setup), which typically takes $\Theta$(n) time. Then, during each iteration, the algorithm does a 2-opt swap and recalculates the tour length, both taking $\Theta$(n) time. With up to 1000 iterations in the worst case, the worst-case time complexity is $\Theta(n^2)$.
+
+The worst-case space complexity is $\Theta(n)$, with n being the number of cities. This is due to the fact that the algorithm saves the current tour as a list of cities, which requires linear space. Additionally, during each iteration, a temporary list can be used to hold a potential tour after the 2-opt swap is performed, which also uses linear space. Since no other data structures were used, the overall space use remains proportional to the cities.
+
+
+
+“I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.”
+
+For this assignment, I asked Chat GPT for help improving my reasoning, mostly regarding its presentation and articulation. I also recieved help from Chat GPT with troubleshooting errors in my code.js file.
